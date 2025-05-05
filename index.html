@@ -1,24 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>HowWasYourDayAtSchool</title>
+    <meta charset="UTF-8">
+    <title>Tyler's Chatbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- N8N Chatbox Styles -->
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
+    <!-- Custom Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #222;
+            color: #fff;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .chat-container {
+            margin-top: 40px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: white;
+            padding: 20px;
+        }
+
+        h1, p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>How Was Your Day at School?</h1>
+    </header>
+
+    <main>
+        <p>Welcome! Click the chat below to talk with Tyler's assistant.</p>
+        
+        <div class="chat-container" id="chatbox">
+            <!-- Chat will appear here -->
+        </div>
+    </main>
+
+    <!-- N8N Chatbox Script -->
     <script type="module">
         import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
         createChat({
-            webhookUrl: 'https://tylerbroderick.app.n8n.cloud/webhook/5308edc9-738b-4aae-a789-214e2392579a/chat'
+            webhookUrl: 'https://tylerbroderick.app.n8n.cloud/webhook/5308edc9-738b-4aae-a789-214e2392579a/chat',
+            target: "#chatbox"
         });
-    </script>
-</head>
-<body>
-    <h1>How was your day at school?</h1>
-    <button id="button">Click on me!</button>
-    <script>
-        let button = document.getElementById('button')
-        button.onclick = function () {
-            alert("your a grassfed fucking nigger!");
-        }
     </script>
 </body>
 </html>
